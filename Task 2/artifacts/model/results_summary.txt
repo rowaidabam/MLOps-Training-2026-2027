@@ -1,0 +1,25 @@
+
+Notebook 6 — Train, Tune, and Evaluate
+=======================================
+
+Final model:
+RandomForestClassifier
+
+Decision threshold:
+0.50
+
+Validation performance:
+Accuracy:  0.8636
+Precision: 0.2777
+Recall:    0.4574
+F1:        0.3456
+ROC-AUC:   0.7886
+
+Final test performance:
+Accuracy:  0.8596
+Precision: 0.2680
+Recall:    0.4532
+F1:        0.3368
+ROC-AUC:   0.7803
+
+The test set was used only once for the final evaluation.

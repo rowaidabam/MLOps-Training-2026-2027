@@ -1,0 +1,53 @@
+{
+  "n_input_features": 26,
+  "n_output_features": 78,
+  "categorical_features": [
+    "customer_state",
+    "state"
+  ],
+  "numerical_features": [
+    "latitude",
+    "longitude",
+    "item_count",
+    "unique_products",
+    "unique_sellers",
+    "total_item_price",
+    "mean_item_price",
+    "max_item_price",
+    "total_freight_value",
+    "mean_freight_value",
+    "mean_product_weight_g",
+    "product_category_count",
+    "seller_state_count",
+    "payment_count",
+    "total_payment_value",
+    "mean_payment_value",
+    "max_payment_installments",
+    "purchase_year",
+    "purchase_month",
+    "purchase_dayofweek",
+    "purchase_hour",
+    "estimated_delivery_month",
+    "estimated_delivery_window_days",
+    "approval_delay_hours"
+  ],
+  "dropped_high_cardinality_features": [
+    "customer_city",
+    "city",
+    "customer_zip_code_prefix",
+    "geolocation_zip_code_prefix"
+  ],
+  "date_features_created": [
+    "purchase_year",
+    "purchase_month",
+    "purchase_dayofweek",
+    "purchase_hour",
+    "estimated_delivery_month",
+    "estimated_delivery_window_days",
+    "approval_delay_hours"
+  ],
+  "numeric_imputation": "median",
+  "numeric_scaling": "StandardScaler",
+  "categorical_imputation": "most_frequent",
+  "categorical_encoding": "OneHotEncoder(handle_unknown='ignore')"
+}
