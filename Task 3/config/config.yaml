@@ -1,0 +1,13 @@
+model:
+  path: models/random_forest_model.joblib
+  preprocessor_path: models/preprocessor.joblib
+  feature_names_path: models/feature_names.json
+  feature_manifest_path: models/feature_manifest.json
+  threshold_path: models/decision_threshold.json
+
+data:
+  test_path: data/test.csv
+
+logging:
+  level: INFO
+  log_file: logs/app.log
