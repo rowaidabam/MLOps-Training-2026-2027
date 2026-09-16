@@ -3,16 +3,19 @@ import pytest
 import pandas as pd
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 
+from src.config import load_config
 from src.features import load_preprocessor
 from src.predict import load_model, load_threshold, predict
 
 
 def test_pipeline_matches_notebook_test_results():
-    preprocessor = load_preprocessor("models/preprocessor.joblib")
-    model = load_model("models/random_forest_model.joblib")
-    threshold = load_threshold("models/decision_threshold.json")
+    config = load_config()
 
-    test_df = pd.read_csv("data/test.csv")
+    preprocessor = load_preprocessor(config["model"]["preprocessor_path"])
+    model = load_model(config["model"]["path"])
+    threshold = load_threshold(config["model"]["threshold_path"])
+
+    test_df = pd.read_csv(config["data"]["test_path"])
     y_true = test_df["is_late"]
 
     result = predict(test_df, preprocessor, model, threshold)

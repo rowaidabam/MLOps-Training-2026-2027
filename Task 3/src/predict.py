@@ -29,6 +29,13 @@ def predict(
 ) -> pd.DataFrame:
     start_time = time.perf_counter()
 
+    logger.info(
+        "Prediction request received | rows=%d | columns=%s | model_version=%s",
+        len(df),
+        list(df.columns),
+        model_version,
+    )
+
     try:
         X = transform_features(df, preprocessor)
 
@@ -43,10 +50,11 @@ def predict(
         latency_ms = (time.perf_counter() - start_time) * 1000
 
         logger.info(
-            "Prediction completed | rows=%d | predictions=%s | "
+            "Prediction completed | rows=%d | predicted_late=%d | predicted_on_time=%d | "
             "latency_ms=%.2f | model_version=%s",
             len(df),
-            predictions.tolist(),
+            int(predictions.sum()),
+            int((predictions == 0).sum()),
             latency_ms,
             model_version,
         )
