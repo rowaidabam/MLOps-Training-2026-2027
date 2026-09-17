@@ -1,0 +1,12 @@
+.venv
+notebooks
+artifacts
+data
+tests
+logs
+mlruns
+mlflow.db
+.git
+.dvc
+*.pyc
+__pycache__
