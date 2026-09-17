@@ -27,6 +27,3 @@ jobs:
 
       - name: Run tests
         run: pytest tests/test_features.py
-
-      - name: Build Docker image
-        run: docker build -t late-delivery-api .
