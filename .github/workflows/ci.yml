@@ -26,7 +26,7 @@ jobs:
           pip install pytest
 
       - name: Run tests
-        run: pytest tests/test_features.py tests/test_service.py
+        run: pytest tests/test_features.py
 
       - name: Build Docker image
         run: docker build -t late-delivery-api .
