@@ -19,6 +19,13 @@ def load_threshold(path):
     with open(path) as f:
         return json.load(f)["threshold"]
 
+import mlflow.sklearn
+
+def load_model_from_registry(tracking_uri, model_name, alias):
+    mlflow.set_tracking_uri(tracking_uri)
+    model_uri = f"models:/{model_name}@{alias}"
+    return mlflow.sklearn.load_model(model_uri)
+
 
 def predict(
     df: pd.DataFrame,

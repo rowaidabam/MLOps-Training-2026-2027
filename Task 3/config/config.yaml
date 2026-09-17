@@ -11,3 +11,8 @@ data:
 logging:
   level: INFO
   log_file: logs/app.log
+
+mlflow:
+  tracking_uri: "http://127.0.0.1:5000"
+  model_name: "late_delivery_classifier"
+  stage: "Staging"
